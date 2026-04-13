@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Royale Hotel - Luxury Accommodation in Paradise</title>
+    <meta name="description" content="Experience unparalleled luxury at Grand Royale Hotel. Premium rooms, world-class amenities, and exceptional service await you in paradise.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'gold': '#D4AF37',
+                        'gold-light': '#E6C558',
+                        'gold-dark': '#B8941F',
+                        'navy': '#1e3a5f',
+                        'navy-light': '#2d4a6f',
+                        'navy-dark': '#152a47',
+                        'beige': '#F5E6D3',
+                        'beige-light': '#FAF0E6',
+                        'beige-dark': '#E8D4B0',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s ease-in-out infinite',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
+                    },
+                    boxShadow: {
+                        'luxury': '0 20px 60px rgba(30, 58, 95, 0.15)',
+                        'luxury-lg': '0 30px 80px rgba(30, 58, 95, 0.2)',
+                        'gold-glow': '0 0 30px rgba(212, 175, 55, 0.3)',
+                        'card': '0 10px 30px rgba(0, 0, 0, 0.1)',
+                        'card-hover': '0 20px 40px rgba(0, 0, 0, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 overflow-x-hidden">
+    
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-gold border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-gray-800 font-serif text-xl">Grand Royale</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-40 bg-white/98 backdrop-blur-xl shadow-luxury transition-all duration-500">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center py-5">
+                <div class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-all duration-300 shadow-gold-glow">
+                        <i class="fas fa-crown text-white text-lg"></i>
+                    </div>
+                    <h1 class="font-serif text-2xl font-bold text-gray-800 tracking-wide">Grand Royale</h1>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-10">
+                    <a href="#home" class="nav-link text-white hover:text-gold font-semibold transition-all duration-300 relative group py-2">
+                        <i class="fas fa-home mr-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="nav-link text-white hover:text-gold font-semibold transition-all duration-300 relative group py-2">
+                        <i class="fas fa-info-circle mr-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#rooms" class="nav-link text-white hover:text-gold font-semibold transition-all duration-300 relative group py-2">
+                        <i class="fas fa-bed mr-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        Rooms
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#amenities" class="nav-link text-white hover:text-gold font-semibold transition-all duration-300 relative group py-2">
+                        <i class="fas fa-spa mr-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        Amenities
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#gallery" class="nav-link text-white hover:text-gold font-semibold transition-all duration-300 relative group py-2">
+                        <i class="fas fa-images mr-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        Gallery
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#offers" class="nav-link text-white hover:text-gold font-semibold transition-all duration-300 relative group py-2">
+                        <i class="fas fa-tag mr-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        Offers
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="nav-link text-white hover:text-gold font-semibold transition-all duration-300 relative group py-2">
+                        <i class="fas fa-phone mr-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <button class="bg-gradient-to-r from-gold to-gold-dark text-white px-8 py-3 rounded-full hover:shadow-gold-glow hover:from-gold-light hover:to-gold transition-all duration-300 transform hover:scale-105 font-semibold tracking-wide border-2 border-gold/50">
+                        <i class="fas fa-calendar-check mr-2"></i>
+                        Book Now
+                    </button>
+                </div>
+                
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-800 p-2 hover:bg-gray-100 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-6 py-6 space-y-4">
+                <a href="#home" class="block text-gray-700 hover:text-gold font-medium transition-all duration-300 py-2 border-l-2 border-transparent hover:border-gold pl-4">
+                    Home
+                </a>
+                <a href="#about" class="block text-gray-700 hover:text-gold font-medium transition-all duration-300 py-2 border-l-2 border-transparent hover:border-gold pl-4">
+                    About
+                </a>
+                <a href="#rooms" class="block text-gray-700 hover:text-gold font-medium transition-all duration-300 py-2 border-l-2 border-transparent hover:border-gold pl-4">
+                    Rooms
+                </a>
+                <a href="#amenities" class="block text-gray-700 hover:text-gold font-medium transition-all duration-300 py-2 border-l-2 border-transparent hover:border-gold pl-4">
+                    Amenities
+                </a>
+                <a href="#gallery" class="block text-gray-700 hover:text-gold font-medium transition-all duration-300 py-2 border-l-2 border-transparent hover:border-gold pl-4">
+                    Gallery
+                </a>
+                <a href="#offers" class="block text-gray-700 hover:text-gold font-medium transition-all duration-300 py-2 border-l-2 border-transparent hover:border-gold pl-4">
+                    Offers
+                </a>
+                <a href="#contact" class="block text-gray-700 hover:text-gold font-medium transition-all duration-300 py-2 border-l-2 border-transparent hover:border-gold pl-4">
+                    Contact
+                </a>
+                <button class="w-full bg-gradient-to-r from-gold to-gold-dark text-white px-8 py-3 rounded-full hover:shadow-gold-glow hover:from-gold-light hover:to-gold transition-all duration-300 font-semibold mt-4 border-2 border-gold/50">
+                    <i class="fas fa-calendar-check mr-2"></i>
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                 alt="Luxury Hotel" 
+                 class="w-full h-full object-cover transform scale-105">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+        </div>
+        
+        <div class="relative z-10 container mx-auto px-6 text-center text-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-4 animate-slide-up">
+                    <span class="inline-block bg-gold/20 backdrop-blur-sm text-gold px-6 py-2 rounded-full text-sm font-semibold tracking-wide border border-gold/30">
+                        Welcome to Paradise
+                    </span>
+                </div>
+                <h1 class="font-serif text-6xl md:text-8xl font-bold mb-6 animate-fade-in leading-tight">
+                    Experience Luxury & Comfort<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light">Like Never Before</span>
+                </h1>
+                <p class="text-xl md:text-3xl mb-12 animate-slide-up text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                    Indulge in unparalleled elegance and world-class service in our tropical paradise
+                </p>
+                
+                <!-- Booking Form -->
+                <div class="max-w-5xl mx-auto bg-white/98 backdrop-blur-xl rounded-3xl shadow-luxury-lg p-8 md:p-10 animate-slide-up border border-white/20">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="text-left group">
+                            <label class="block text-gray-800 text-sm font-semibold mb-3 flex items-center">
+                                <i class="fas fa-calendar-check text-gold mr-2"></i>
+                                Check-in
+                            </label>
+                            <input type="date" class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-gold focus:border-gold text-gray-700 transition-all duration-300 hover:border-gold/50">
+                        </div>
+                        <div class="text-left group">
+                            <label class="block text-gray-800 text-sm font-semibold mb-3 flex items-center">
+                                <i class="fas fa-calendar-times text-gold mr-2"></i>
+                                Check-out
+                            </label>
+                            <input type="date" class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-gold focus:border-gold text-gray-700 transition-all duration-300 hover:border-gold/50">
+                        </div>
+                        <div class="text-left group">
+                            <label class="block text-gray-800 text-sm font-semibold mb-3 flex items-center">
+                                <i class="fas fa-users text-gold mr-2"></i>
+                                Guests
+                            </label>
+                            <select class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-gold focus:border-gold text-gray-700 transition-all duration-300 hover:border-gold/50">
+                                <option>1 Guest</option>
+                                <option>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4+ Guests</option>
+                            </select>
+                        </div>
+                        <div class="flex items-end">
+                            <button class="w-full bg-gradient-to-r from-gold to-gold-dark text-white px-8 py-4 rounded-xl hover:shadow-gold-glow transition-all duration-300 transform hover:scale-105 font-bold text-lg tracking-wide group">
+                                <span class="flex items-center justify-center">
+                                    Book Your Stay
+                                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center justify-center space-x-6 text-sm">
+                        <div class="flex items-center text-red-600 font-semibold animate-pulse-slow">
+                            <i class="fas fa-fire mr-2"></i>
+                            Only 3 rooms left for this weekend!
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-shield-alt text-green-600 mr-2"></i>
+                            Free cancellation
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white relative z-10">
+        <div class="container mx-auto px-4 relative z-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 relative z-30">
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-800 animate-slide-in-left">
+                        Welcome to Grand Royale
+                    </h2>
+                    <p class="text-lg text-gray-700 leading-relaxed animate-slide-in-left" style="animation-delay: 0.2s">
+                        For over 50 years, Grand Royale has been the epitome of luxury hospitality in paradise. 
+                        Our commitment to excellence has earned us numerous awards and the loyalty of discerning 
+                        travelers from around the world.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed animate-slide-in-left" style="animation-delay: 0.4s">
+                        Nestled in the heart of paradise, our hotel offers breathtaking views, world-class amenities, 
+                        and personalized service that exceeds expectations. Every detail is meticulously crafted 
+                        to ensure your stay is nothing short of extraordinary.
+                    </p>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="grid grid-cols-3 gap-6 pt-6 animate-slide-in-left" style="animation-delay: 0.6s">
+                        <div class="text-center group">
+                            <div class="text-3xl font-bold text-gold mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+                            <div class="text-sm text-gray-600">Years of Excellence</div>
+                        </div>
+                        <div class="text-center group">
+                            <div class="text-3xl font-bold text-gold mb-2 group-hover:scale-110 transition-transform duration-300">10K+</div>
+                            <div class="text-sm text-gray-600">Happy Guests</div>
+                        </div>
+                        <div class="text-center group">
+                            <div class="text-3xl font-bold text-gold mb-2 group-hover:scale-110 transition-transform duration-300">15</div>
+                            <div class="text-sm text-gray-600">Luxury Awards</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative z-30 animate-slide-in-right">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Hotel Interior" 
+                             class="rounded-2xl shadow-luxury w-full transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-gold to-gold-dark text-white p-4 rounded-xl shadow-luxury transform group-hover:scale-110 transition-transform duration-300">
+                            <div class="text-2xl font-bold">5-Star</div>
+                            <div class="text-sm">Luxury Hotel</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms & Suites Section -->
+    <section id="rooms" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Rooms & Suites
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Each room is a sanctuary of comfort and elegance, designed to provide the perfect retreat
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Deluxe Room -->
+                <div class="room-card group bg-white rounded-3xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-3 hover:scale-105">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Deluxe Room" 
+                             class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-gradient-to-r from-gold to-gold-dark text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                            <i class="fas fa-star mr-1"></i> Popular
+                        </div>
+                        <div class="absolute bottom-4 left-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-800">
+                                <i class="fas fa-expand text-gold mr-1"></i> 450 sq ft
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-serif text-2xl font-bold text-gray-800">Deluxe Room</h3>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-bold text-gold">$299</span>
+                            <span class="text-gray-500 ml-2">/night</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">King Size Bed</span>
+                            </li>
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">Ocean View</span>
+                            </li>
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">Luxury Bathroom</span>
+                            </li>
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">Mini Bar & Coffee</span>
+                            </li>
+                        </ul>
+                        <div class="flex space-x-3">
+                            <button class="flex-1 border-2 border-gold text-gold px-6 py-3 rounded-xl hover:bg-gold hover:text-white transition-all duration-300 font-semibold group/btn">
+                                <span class="flex items-center justify-center">
+                                    <i class="fas fa-eye mr-2 group-hover/btn:scale-110 transition-transform duration-300"></i>
+                                    View Details
+                                </span>
+                            </button>
+                            <button class="flex-1 bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-3 rounded-xl hover:shadow-gold-glow transition-all duration-300 font-semibold group/btn">
+                                <span class="flex items-center justify-center">
+                                    Book Now
+                                    <i class="fas fa-arrow-right ml-2 group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Executive Suite -->
+                <div class="room-card group bg-white rounded-3xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-3 hover:scale-105">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Executive Suite" 
+                             class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse-slow">
+                            <i class="fas fa-fire mr-1"></i> Limited
+                        </div>
+                        <div class="absolute bottom-4 left-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-800">
+                                <i class="fas fa-expand text-gold mr-1"></i> 750 sq ft
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-serif text-2xl font-bold text-gray-800">Executive Suite</h3>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-bold text-gold">$499</span>
+                            <span class="text-gray-500 ml-2">/night</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">Separate Living Area</span>
+                            </li>
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">Panoramic Ocean View</span>
+                            </li>
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">Jacuzzi & Steam Room</span>
+                            </li>
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">Butler Service</span>
+                            </li>
+                        </ul>
+                        <div class="flex space-x-3">
+                            <button class="flex-1 border-2 border-gold text-gold px-6 py-3 rounded-xl hover:bg-gold hover:text-white transition-all duration-300 font-semibold group/btn">
+                                <span class="flex items-center justify-center">
+                                    <i class="fas fa-eye mr-2 group-hover/btn:scale-110 transition-transform duration-300"></i>
+                                    View Details
+                                </span>
+                            </button>
+                            <button class="flex-1 bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-3 rounded-xl hover:shadow-gold-glow transition-all duration-300 font-semibold group/btn">
+                                <span class="flex items-center justify-center">
+                                    Book Now
+                                    <i class="fas fa-arrow-right ml-2 group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Presidential Suite -->
+                <div class="room-card group bg-white rounded-3xl shadow-card overflow-hidden hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-3 hover:scale-105">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590490362328-2dd269d0ff48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Presidential Suite" 
+                             class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                            <i class="fas fa-crown mr-1"></i> Premium
+                        </div>
+                        <div class="absolute bottom-4 left-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <div class="bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-800">
+                                <i class="fas fa-expand text-gold mr-1"></i> 1,500 sq ft
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-serif text-2xl font-bold text-gray-800">Presidential Suite</h3>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-bold text-gold">$999</span>
+                            <span class="text-gray-500 ml-2">/night</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">2 Bedrooms & 3 Bathrooms</span>
+                            </li>
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">Private Pool & Terrace</span>
+                            </li>
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">Private Chef Available</span>
+                            </li>
+                            <li class="flex items-center text-gray-700 group/item">
+                                <i class="fas fa-check text-gold mr-3 w-5"></i>
+                                <span class="group-hover/item:text-gray-800 transition-colors duration-300">Helicopter Transfer</span>
+                            </li>
+                        </ul>
+                        <div class="flex space-x-3">
+                            <button class="flex-1 border-2 border-gold text-gold px-6 py-3 rounded-xl hover:bg-gold hover:text-white transition-all duration-300 font-semibold group/btn">
+                                <span class="flex items-center justify-center">
+                                    <i class="fas fa-eye mr-2 group-hover/btn:scale-110 transition-transform duration-300"></i>
+                                    View Details
+                                </span>
+                            </button>
+                            <button class="flex-1 bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-3 rounded-xl hover:shadow-gold-glow transition-all duration-300 font-semibold group/btn">
+                                <span class="flex items-center justify-center">
+                                    Book Now
+                                    <i class="fas fa-arrow-right ml-2 group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-20 bg-white text-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    World-Class Amenities
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Experience luxury redefined with our exceptional facilities and services
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div class="text-center group">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center group-hover:bg-gold transition-all duration-300">
+                        <i class="fas fa-spa text-2xl text-gold group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-semibold">Luxury Spa</h3>
+                    <p class="text-sm text-gray-400 mt-1">Relax & Rejuvenate</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center group-hover:bg-gold transition-all duration-300">
+                        <i class="fas fa-swimming-pool text-2xl text-gold group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-semibold">Infinity Pool</h3>
+                    <p class="text-sm text-gray-400 mt-1">Ocean View Swimming</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center group-hover:bg-gold transition-all duration-300">
+                        <i class="fas fa-wifi text-2xl text-gold group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-semibold">Free WiFi</h3>
+                    <p class="text-sm text-gray-400 mt-1">High-Speed Internet</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center group-hover:bg-gold transition-all duration-300">
+                        <i class="fas fa-utensils text-2xl text-gold group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-semibold">Fine Dining</h3>
+                    <p class="text-sm text-gray-400 mt-1">Michelin Star Restaurant</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center group-hover:bg-gold transition-all duration-300">
+                        <i class="fas fa-parking text-2xl text-gold group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-semibold">Valet Parking</h3>
+                    <p class="text-sm text-gray-400 mt-1">Complimentary Service</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center group-hover:bg-gold transition-all duration-300">
+                        <i class="fas fa-dumbbell text-2xl text-gold group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-semibold">Fitness Center</h3>
+                    <p class="text-sm text-gray-400 mt-1">24/7 Gym Access</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Gallery
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Take a visual tour of our stunning property and luxurious facilities
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item col-span-2 row-span-2">
+                    <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Hotel Lobby" 
+                         class="w-full h-full object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Pool Area" 
+                         class="w-full h-full object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Restaurant" 
+                         class="w-full h-full object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Luxury Suite" 
+                         class="w-full h-full object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Beach View" 
+                         class="w-full h-full object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="gallery-item col-span-2">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Spa Center" 
+                         class="w-full h-full object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    What Our Guests Say
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Real experiences from our valued guests
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 alt="Guest" 
+                                 class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                                <div class="flex text-gold">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "Absolutely phenomenal experience! The attention to detail, world-class service, and stunning views made our anniversary celebration unforgettable. We're already planning our next visit!"
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-6 space-x-2">
+                    <button class="w-3 h-3 bg-gold rounded-full"></button>
+                    <button class="w-3 h-3 bg-gray-300 rounded-full"></button>
+                    <button class="w-3 h-3 bg-gray-300 rounded-full"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="offers" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Special Offers & Packages
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Exclusive deals for your perfect getaway
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-gold to-yellow-600 rounded-2xl p-6 text-white relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                        -30% OFF
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-2">Summer Escape</h3>
+                    <p class="mb-4">Enjoy 30% off on all rooms plus complimentary breakfast</p>
+                    <div class="text-3xl font-bold mb-4">From $209/night</div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check mr-2"></i>
+                            Free Breakfast
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check mr-2"></i>
+                            Spa Credit $50
+                        </li>
+                    </ul>
+                    <button class="w-full bg-white text-gold px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300">
+                        Book This Deal
+                    </button>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-6 text-gray-800 relative overflow-hidden border border-gray-300">
+                    <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                        LIMITED
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-2">Romantic Getaway</h3>
+                    <p class="mb-4">Perfect package for couples with champagne & roses</p>
+                    <div class="text-3xl font-bold mb-4">From $399/night</div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check mr-2"></i>
+                            Champagne & Roses
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check mr-2"></i>
+                            Couples Spa Treatment
+                        </li>
+                    </ul>
+                    <button class="w-full bg-white text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300">
+                        Book This Deal
+                    </button>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-6 text-white relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                        NEW
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-2">Business Elite</h3>
+                    <p class="mb-4">Corporate package with meeting room access</p>
+                    <div class="text-3xl font-bold mb-4">From $349/night</div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check mr-2"></i>
+                            Meeting Room Access
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check mr-2"></i>
+                            High-Speed WiFi
+                        </li>
+                    </ul>
+                    <button class="w-full bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300">
+                        Book This Deal
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Our Prime Location
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Situated in the heart of paradise, close to major attractions
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+                        <h3 class="font-serif text-2xl font-bold text-gray-800 mb-4">Getting Here</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-plane text-gold mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">Airport</h4>
+                                    <p class="text-gray-600">15 minutes from International Airport</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-car text-gold mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">Transportation</h4>
+                                    <p class="text-gray-600">Complimentary airport shuttle available</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-gold mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">Address</h4>
+                                    <p class="text-gray-600">123 Paradise Beach Road, Paradise Island, 12345</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+                        <h3 class="font-serif text-2xl font-bold text-gray-800 mb-4">Nearby Attractions</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">Paradise Beach</span>
+                                <span class="text-gold font-semibold">2 min walk</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">Shopping District</span>
+                                <span class="text-gold font-semibold">5 min drive</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">Golf Club</span>
+                                <span class="text-gold font-semibold">10 min drive</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">Historic Museum</span>
+                                <span class="text-gold font-semibold">15 min drive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rounded-2xl overflow-hidden shadow-lg">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316bb8b6b5%3A0x4f5c5e5e5e5e5e5e!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1234567890"
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white text-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Get in Touch
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    We're here to make your stay unforgettable
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                        <h3 class="font-serif text-2xl font-bold text-gray-800 mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-gold mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Phone</p>
+                                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-gold mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <p class="text-gray-600">reservations@grandroyale.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-gold mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Hours</p>
+                                    <p class="text-gray-600">24/7 Reception & Concierge</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                        <h3 class="font-serif text-2xl font-bold text-gray-800 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-gold rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors duration-300">
+                                <i class="fab fa-facebook-f text-white"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gold rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors duration-300">
+                                <i class="fab fa-instagram text-white"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gold rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors duration-300">
+                                <i class="fab fa-twitter text-white"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gold rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors duration-300">
+                                <i class="fab fa-linkedin-in text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8">
+                    <h3 class="font-serif text-2xl font-bold text-gray-800 mb-6">Send us a Message</h3>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gold text-white px-6 py-3 rounded-lg hover:bg-yellow-600 transition-all duration-300 font-semibold">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-crown text-gold text-2xl"></i>
+                        <h3 class="font-serif text-2xl font-bold">Grand Royale</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Experience luxury redefined at our award-winning hotel in paradise.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#rooms" class="text-gray-400 hover:text-gold transition-colors duration-300">Rooms & Suites</a></li>
+                        <li><a href="#amenities" class="text-gray-400 hover:text-gold transition-colors duration-300">Amenities</a></li>
+                        <li><a href="#offers" class="text-gray-400 hover:text-gold transition-colors duration-300">Special Offers</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-gold transition-colors duration-300">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300">Spa & Wellness</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300">Fine Dining</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300">Events & Meetings</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300">Concierge Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for exclusive offers and updates</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-2 bg-gray-800 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-gold">
+                        <button type="submit" class="bg-gold text-white px-4 py-2 rounded-r-lg hover:bg-yellow-600 transition-colors duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2024 Grand Royale Hotel. All rights reserved. | 
+                    <a href="#" class="hover:text-gold transition-colors duration-300">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-gold transition-colors duration-300">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
